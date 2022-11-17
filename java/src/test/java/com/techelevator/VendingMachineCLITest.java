@@ -41,15 +41,16 @@ public class VendingMachineCLITest {
     }
     @Test
     public void test_vending_list_has_values() throws FileNotFoundException {
-        VendingItems testVend = new VendingItems("A2", "testy", 1000);
+        VendingItems testVend = new VendingItems("B2", "testy", 1000);
 
         VendingContents testContents = new VendingContents();
-        testContents.add("A2",testVend);
+        testContents.add("B2",testVend);
 
 
-        List expectedList = testContents.getContentsList();
-        String expected= (String) expectedList.get(162);
-        System.out.println(expected);
+        List actualList = testContents.getContentsList();
+        String actual= (String) actualList.get(11);
+        System.out.println(actual);
+
         assertEquals(true, true);
 
 

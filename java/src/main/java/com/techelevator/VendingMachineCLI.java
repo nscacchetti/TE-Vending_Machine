@@ -19,6 +19,7 @@ public class VendingMachineCLI {
 
 
     }
+
     /*
         pushing catering/catering1 inside vending machine
         create class for money
