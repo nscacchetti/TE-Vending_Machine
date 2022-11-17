@@ -3,6 +3,8 @@ package com.techelevator.application;
 import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
+import java.util.List;
+
 public class VendingMachine 
 {
     public void run()
@@ -33,6 +35,7 @@ public class VendingMachine
         int c = 30;
         int d = 40;
         char letter = slot.charAt(0);
+
         int number = Integer.parseInt(slot.substring(1));
         int index = number;
         if (letter == 'A') {
@@ -48,4 +51,29 @@ public class VendingMachine
         }
         return index;
     }
+
+    public static void vendingDisplay(VendingMachineHistory history, VendingContents contents) {
+        List list = contents.contentsList;
+        boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
+        for (int i = 0; i < list.size(); i++) {
+            VendingItems item = (VendingItems) contents.contentsList.get(i);
+            String slotNo = item.getSlotNo();
+            String name = item.getNameOfProduct();
+            if (slotNo != null) {
+                int price = item.getPrice(isDiscounted);
+                int quantity = item.getQuantity();
+
+                String quantityString;
+                if (quantity == 0) {
+                    quantityString = "NO LONGER AVAILABLE.";
+                } else {
+                    quantityString = String.valueOf(quantity);
+                }
+                System.out.println(slotNo + " " + name + " " + price + " " + quantityString);
+            }
+        }
+    }
+
+
+
 }

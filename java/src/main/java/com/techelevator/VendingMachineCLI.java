@@ -46,8 +46,8 @@ public class VendingMachineCLI {
 **     }
 
 
-             use filewriter(or whatever doesnt overwrite the file like printwriter) to append entry to audit.txt
-             get current date and time. file out powerpint append to things with printwriter
+**             use filewriter(or whatever doesnt overwrite the file like printwriter) to append entry to audit.txt
+**             get current date and time. file out powerpint append to things with printwriter
 
         Display Method:
             if (odd)
@@ -58,7 +58,7 @@ public class VendingMachineCLI {
         Purchase:
             (M) Feed Money: 1, 5, 10, 20
                 While more money is left to be added to remainingMoney
-                writerMethod
+**              writerMethod
 
             (S) Select Item:
                 Use display method

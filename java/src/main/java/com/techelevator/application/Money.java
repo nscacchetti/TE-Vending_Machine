@@ -1,5 +1,7 @@
 package com.techelevator.application;
 
+import java.util.Scanner;
+
 public class Money {
 
     private int remainingBalance = 0;
@@ -23,5 +25,21 @@ public class Money {
 
     public int addMoney (int inputMoney) {
         return this.remainingBalance += inputMoney;
+    }
+
+    public void feedMoney () {
+        Scanner inputScanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Insert money in whole dollar amounts");
+            String dollarsEntered = inputScanner.nextLine();
+            try {
+                int addedDollars = Integer.parseInt(dollarsEntered) * 100;
+                addMoney(addedDollars);
+            } catch {
+                
+            }
+
+        }
+
     }
 }

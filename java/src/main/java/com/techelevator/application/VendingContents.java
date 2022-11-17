@@ -15,12 +15,13 @@ public class VendingContents {
 //    find different list
     public VendingContents() {
         for (int i = 0; i < 101; i++) {
-            contentsList.add("");
+            VendingItems empty = new VendingItems(null, null, 0);
+            contentsList.add(empty);
         }
 
     }
 
-    public void add(String slot, VendingItems item) {
+    public void setItem(String slot, VendingItems item) {
 
         int index = VendingConverting(slot);
         this.contentsList.set(index, item);
