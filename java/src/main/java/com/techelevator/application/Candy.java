@@ -2,8 +2,8 @@ package com.techelevator.application;
 
 public class Candy extends VendingItems {
 
-    public Candy(String slotNo, String nameOfProduct, int price, boolean discountApplies) {
-        super(slotNo, nameOfProduct, price, discountApplies);
+    public Candy(String slotNo, String nameOfProduct, int price) {
+        super(slotNo, nameOfProduct, price);
     }
 
     @Override

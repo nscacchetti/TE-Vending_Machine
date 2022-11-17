@@ -2,8 +2,8 @@ package com.techelevator.application;
 
 public class Munchy extends VendingItems {
 
-    public Munchy(String slotNo, String nameOfProduct, int price, boolean discountApplies) {
-        super(slotNo, nameOfProduct, price, discountApplies);
+    public Munchy(String slotNo, String nameOfProduct, int price) {
+        super(slotNo, nameOfProduct, price);
     }
 
     @Override

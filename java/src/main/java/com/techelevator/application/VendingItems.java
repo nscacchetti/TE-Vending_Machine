@@ -8,7 +8,7 @@ public class VendingItems {
     private int quantity = 6;
     private int discountPrice;
 
-    public VendingItems(String slotNo, String nameOfProduct, int price, boolean discountApplies) {
+    public VendingItems(String slotNo, String nameOfProduct, int price) {
         this.slotNo = slotNo;
         this.nameOfProduct = nameOfProduct;
         this.price = price;

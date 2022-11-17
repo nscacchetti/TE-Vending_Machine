@@ -12,6 +12,8 @@ public class VendingMachineCLI {
     }
 
     public static String displayVending(ArrayList vendingContents) {
+
+
         return null;
 
 

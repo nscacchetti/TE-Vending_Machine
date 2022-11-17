@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import com.techelevator.application.VendingItems;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,6 +29,17 @@ public class VendingMachineCLITest {
         String expected = "";
         while (scanner.hasNextLine()) {
             expected += scanner.nextLine();
+
+        }
+
+        String actual = VendingMachineCLI.displayVending(new ArrayList());
+        assertEquals(expected, actual);
+
+
+    }
+    @Test
+    public void test_vending_list_has_values() throws FileNotFoundException {
+        VendingItems testVend = new VendingItems("A2","testy",1000,)
 
         }
 
