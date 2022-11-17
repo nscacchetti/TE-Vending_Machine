@@ -16,25 +16,22 @@ public class VendingMachineCLI {
 
 
 
-
-
-
     }
     /*
         pushing catering/catering1 inside vending machine
         create class for money
-            put checks, gets, sets, subtract ...
+            put checks, gets, sets(no setter created), subtract ...
         Create classes for: Munchy, Candy, Drink, Gum
             slot no, name of product, price, quantity, BOGODO (price - 1)
             have method for return string
             initial quantity = 6
             add item counter
-       Audit file./ writer method:
-       start writer at main beginning
+**       Audit file./ writer method:
+**       start writer at main beginning
 
-        void writerMethod(Writer object, String action/item, double transaction amount in dollars, remainingMoney) {
+**        void writerMethod(Writer object, String action/item, double transaction amount in dollars, remainingMoney) {
 
-        date = getcurrent date
+**        date = getcurrent date
         time = get current time
         action = action/item
         transaction string = $ transaction amount
@@ -43,7 +40,7 @@ public class VendingMachineCLI {
         String to wrtire = date+ " "+ time+ " " .........
         use writer to wrtier to file
 
-     }
+**     }
 
 
              use filewriter(or whatever doesnt overwrite the file like printwriter) to append entry to audit.txt
@@ -67,6 +64,7 @@ public class VendingMachineCLI {
 
                 Dispense method
                     if discountApplies, then apply BOGODO prices
+                    try-catch for spendMoney error
                     quantity-- and remaining money - cost of item
 
                     part of class
