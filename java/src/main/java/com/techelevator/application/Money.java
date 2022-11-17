@@ -2,6 +2,8 @@ package com.techelevator.application;
 
 import java.util.Scanner;
 
+import static com.techelevator.ui.UserInput.getHomeScreenOption;
+
 public class Money {
 
     private int remainingBalance = 0;
@@ -35,8 +37,8 @@ public class Money {
             try {
                 int addedDollars = Integer.parseInt(dollarsEntered) * 100;
                 addMoney(addedDollars);
-            } catch {
-                
+            } catch(Exception e) {
+                getHomeScreenOption();
             }
 
         }
