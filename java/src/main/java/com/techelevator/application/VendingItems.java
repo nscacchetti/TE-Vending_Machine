@@ -34,7 +34,7 @@ public class VendingItems {
         return discountPrice;
     }
 
-    public String dispenseMessage() {
+    public String dispenseMessage(boolean isDiscount, int remainingBalance) {
         return null;
     }
 
