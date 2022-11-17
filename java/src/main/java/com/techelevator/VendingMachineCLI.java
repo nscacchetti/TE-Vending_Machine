@@ -14,11 +14,19 @@ public class VendingMachineCLI {
     public static String displayVending(ArrayList vendingContents) {
         return null;
 
+
+
+
+
+
     }
     /*
         pushing catering/catering1 inside vending machine
+        create class for money
+            put checks, gets, sets, subtract ...
         Create classes for: Munchy, Candy, Drink, Gum
             slot no, name of product, price, quantity, BOGODO (price - 1)
+            have method for return string
             initial quantity = 6
             add item counter
        Audit file./ writer method:
@@ -39,7 +47,7 @@ public class VendingMachineCLI {
 
 
              use filewriter(or whatever doesnt overwrite the file like printwriter) to append entry to audit.txt
-             get current date and time
+             get current date and time. file out powerpint append to things with printwriter
 
         Display Method:
             if (odd)
@@ -55,11 +63,13 @@ public class VendingMachineCLI {
             (S) Select Item:
                 Use display method
                 if quantity is 0 display: "NO LONGER AVAILABLE."
-                Check is slot exists, check if quantity is 0, then dispense to customer
+                Check is slot exists, check if quantity is > 0, then dispense to customer
 
                 Dispense method
                     if discountApplies, then apply BOGODO prices
                     quantity-- and remaining money - cost of item
+
+                    part of class
                     prints: name, cost, remaining money
                         if munchy: "Munchy, Munchy, so Good!"
                         if candy: "Sugar, Sugar, so Sweet!"
@@ -71,7 +81,7 @@ public class VendingMachineCLI {
 
             (F) Finish Transaction:
                     remainingMoney = 3.35
-
+us int values $1 = 100
                     changeAfterDollars = remainingMoney % 1 = 0.35
                     dollarCount= (remainingMoney - changeAfterDollars)/1 = (3.35-.35)/1 = 3
 

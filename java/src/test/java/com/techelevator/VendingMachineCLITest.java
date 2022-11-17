@@ -11,7 +11,11 @@ import java.util.Scanner;
 import static org.junit.Assert.assertEquals;
 
 public class VendingMachineCLITest {
-
+// min test
+    /*check muchy class
+    * is the price what I expected etc.
+    * change functionallity
+    * */
     @Before
     public void setup(){
 
