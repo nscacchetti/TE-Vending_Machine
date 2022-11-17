@@ -26,6 +26,10 @@ public class VendingItems {
         return price;
     }
 
+    public String getSlotNo() {
+        return slotNo;
+    }
+
     public int getQuantity() {
         return quantity;
     }
