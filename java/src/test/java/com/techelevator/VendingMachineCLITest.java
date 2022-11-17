@@ -1,15 +1,22 @@
 package com.techelevator;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
-class VendingMachineCLITest {
-    String string = "";
+public class VendingMachineCLITest {
+
+    @Before
+    public void setup(){
+
+    }
+
     @Test
     public void test_display_shows_full_inventory() throws FileNotFoundException {
         File testDisplay = new File("catering_test_display");
@@ -20,10 +27,8 @@ class VendingMachineCLITest {
 
         }
 
-//        String actual = VendingMachineCLI.displayVending(...);
-//        assertEquals(expected, actual);
-
-
+        String actual = VendingMachineCLI.displayVending(new ArrayList());
+        assertEquals(expected, actual);
 
 
     }
