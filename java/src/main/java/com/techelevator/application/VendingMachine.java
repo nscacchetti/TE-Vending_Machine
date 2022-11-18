@@ -59,7 +59,7 @@ public class VendingMachine
         boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
         for (int i = 0; i <contentsList.size() ; i++) {
 
-            VendingItems item = (VendingItems) contentsList.get(i);
+            VendingItems item = contents.getVendingItem(i);
             String slotNo = item.getSlotNo();
             String name = item.getNameOfProduct();
             if (slotNo != null) {

@@ -31,12 +31,13 @@ public class VendingContents {
         return contentsMap;
     }
 
-    public VendingItems getVendingItem(String slot) {
-        return contentsMap.get(slot);
+    public VendingItems getVendingItem(int position) {
+        List list= getVendingList();
+        return (VendingItems) list.get(position);
     }
 
-    public List getVendingList() {
-        List contents = new ArrayList();
+    public List<VendingItems> getVendingList() {
+        List<VendingItems> contents = new ArrayList();
 
         for (VendingItems value : contentsMap.values()) {
             contents.add(value);
