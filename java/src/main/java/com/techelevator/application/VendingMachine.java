@@ -4,6 +4,7 @@ import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class VendingMachine 
@@ -54,10 +55,11 @@ public class VendingMachine
     }
 
     public static void vendingDisplay(VendingMachineHistory history, VendingContents contents) {
-        List list = contents.contentsList;
+        List contentsList = contents.getVendingList();
         boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
-        for (int i = 0; i < list.size(); i++) {
-            VendingItems item = (VendingItems) contents.contentsList.get(i);
+        for (int i = 0; i <contentsList.size() ; i++) {
+
+            VendingItems item = (VendingItems) contentsList.get(i);
             String slotNo = item.getSlotNo();
             String name = item.getNameOfProduct();
             if (slotNo != null) {
@@ -81,8 +83,8 @@ public class VendingMachine
         System.out.println("Enter slot id of selection:");
         String slotSelected = scanner.nextLine();
         int slotPosition = VendingConverting(slotSelected);
-        VendingItems selectedItem = contents.
-        if ()
+//        VendingItems selectedItem = contents.
+//        if ()
 
     }
 

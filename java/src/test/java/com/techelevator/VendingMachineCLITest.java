@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
@@ -44,10 +45,10 @@ public class VendingMachineCLITest {
         VendingItems testVend = new VendingItems("B2", "testy", 1000);
 
         VendingContents testContents = new VendingContents();
-        testContents.setItem("B2",testVend);
+        testContents.putItem("B2",testVend);
 
 
-        List actualList = testContents.getContentsList();
+//        Map actualList = testContents.getContentsList();
         System.out.println("Successful");
 
         assertEquals(true, true);
