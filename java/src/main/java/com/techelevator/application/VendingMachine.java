@@ -4,8 +4,9 @@ import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
+
+import static com.techelevator.ui.UserInput.getHomeScreenOption;
 
 public class VendingMachine 
 {
@@ -14,7 +15,7 @@ public class VendingMachine
         while(true)
         {
             UserOutput.displayHomeScreen();
-            String choice = UserInput.getHomeScreenOption();
+            String choice = getHomeScreenOption();
 
             if(choice.equals("display"))
             {
@@ -59,7 +60,7 @@ public class VendingMachine
         boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
         for (int i = 0; i <contentsList.size() ; i++) {
 
-            VendingItems item = contents.getVendingItem(i);
+            VendingItems item = contents.getVendingItemFromList(i);
             String slotNo = item.getSlotNo();
             String name = item.getNameOfProduct();
             if (slotNo != null) {
@@ -76,17 +77,38 @@ public class VendingMachine
             }
         }
     }
-    public static void DispenseItem(VendingMachineHistory history, VendingContents contents) {
+
+    // (S) Select item
+    public static void DispenseItem(VendingMachineHistory history, VendingContents contents, Money money) {
 
         Scanner scanner = new Scanner(System.in);
         vendingDisplay(history,contents);
         System.out.println("Enter slot id of selection:");
         String slotSelected = scanner.nextLine();
-        int slotPosition = VendingConverting(slotSelected);
-//        VendingItems selectedItem = contents.
-//        if ()
+        int quantityInSlot = 0;
+        try {
+            quantityInSlot = contents.getVendingItem(slotSelected).getQuantity();
+        }
+        catch (Exception e) {
+            System.out.println("Slot doesn't exist");
+            DispenseItem(history, contents, money);
+        }
 
+        if (quantityInSlot <= 0) {
+            System.out.println("NO LONGER AVAILABLE.");
+            DispenseItem(history, contents, money);
+        }
+
+        int priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
+
+        try {
+            money.spendMoney(priceInSlot);
+        } catch (Exception e) {
+            getHomeScreenOption();
+        }
+        VendingItems selectedItem = contents.getVendingItem(slotSelected);
+        selectedItem.dispenseItem();
+        selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
+        history.addCounter();
     }
-
-
 }

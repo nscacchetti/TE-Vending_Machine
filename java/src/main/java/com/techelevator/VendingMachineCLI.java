@@ -55,7 +55,7 @@ public class VendingMachineCLI {
             displays each product with the slot no, name, price, quantity
             if quantity is 0 display: "NO LONGER AVAILABLE."
             if discountApplies, then apply BOGODO prices
-        Purchase:
+**        Purchase:
             (M) Feed Money: 1, 5, 10, 20
                 While more money is left to be added to remainingMoney
 **              writerMethod
@@ -77,8 +77,8 @@ public class VendingMachineCLI {
                         if drink: "Drinky, Drinky, Slurp Slurp!"
                         if gum: "Chewy, Chewy, Lots O Bubbles!"
                     itemCounter++
-                    writerMethod
-                    run purchase method
+**                    writerMethod
+**                    run purchase method
 
             (F) Finish Transaction:
                     remainingMoney = 3.35

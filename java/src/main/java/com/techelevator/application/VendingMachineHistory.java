@@ -15,4 +15,8 @@ public class VendingMachineHistory {
     public int addCounter () {
         return this.countOfItemsDispensed++;
     }
+
+    public boolean checkDiscount () {
+       return countOfItemsDispensed % 2 == 1;
+    }
 }

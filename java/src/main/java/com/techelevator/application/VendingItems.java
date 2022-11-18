@@ -42,6 +42,9 @@ public class VendingItems {
         return null;
     }
 
+    public void dispenseItem() {
+        quantity--;
+    }
     //    slot no, name of product, price, quantity, BOGODO (price - 1)
 
 }

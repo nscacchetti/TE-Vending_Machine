@@ -31,9 +31,13 @@ public class VendingContents {
         return contentsMap;
     }
 
-    public VendingItems getVendingItem(int position) {
+    public VendingItems getVendingItemFromList(int position) {
         List list= getVendingList();
         return (VendingItems) list.get(position);
+    }
+
+    public VendingItems getVendingItem (String slot) {
+        return contentsMap.get(slot);
     }
 
     public List<VendingItems> getVendingList() {
