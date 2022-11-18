@@ -4,6 +4,7 @@ import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class VendingMachine 
 {
@@ -73,7 +74,17 @@ public class VendingMachine
             }
         }
     }
+    public static void DispenseItem(VendingMachineHistory history, VendingContents contents) {
 
+        Scanner scanner = new Scanner(System.in);
+        vendingDisplay(history,contents);
+        System.out.println("Enter slot id of selection:");
+        String slotSelected = scanner.nextLine();
+        int slotPosition = VendingConverting(slotSelected);
+        VendingItems selectedItem = contents.
+        if ()
+
+    }
 
 
 }

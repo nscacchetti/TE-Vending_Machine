@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.techelevator.application.VendingMachine.VendingConverting;
+import static com.techelevator.application.VendingMachine.vendingDisplay;
 
 
 public class VendingContents {
@@ -31,5 +32,11 @@ public class VendingContents {
     public List getContentsList() {
         return contentsList;
     }
+
+    public VendingItems void getVendingItem(int position) {
+        return contentsList.get(position);
+    }
+
+
 
 }
