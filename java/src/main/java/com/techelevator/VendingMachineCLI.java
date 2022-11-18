@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class VendingMachineCLI {
     public static void main(String[] args) {
-        VendingMachine vendingMachine = new VendingMachine();
+        VendingMachine vendingMachine = new VendingMachine("catering.csv");
         vendingMachine.run();
 
     }
@@ -100,21 +100,8 @@ us int values $1 = 100
 
                     fedMoney= 0
                   print dollars, quarter, dimes, nickels
-                  writerMethod
-                    run main to return
-
-
-
-
-
-                    remaining money % 1
-                        remainingMoney = remainingMoney - remaining money % 1
-                    remaining money % 0.25
-                        remainingMoney = remainingMoney - remaining money % 0.25
-                    remaining money % 0.10
-                        remainingMoney = remainingMoney - remaining money % 0.10
-                    remaining money % 0.05
-                        remainingMoney = remainingMoney - remaining money % 0.05
+**                  writerMethod
+**                  run main to return
      */
 
 }

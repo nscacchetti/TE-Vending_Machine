@@ -1,6 +1,7 @@
 package com.techelevator.ui;
 
 import com.techelevator.application.Money;
+import com.techelevator.application.VendingMachine;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
@@ -13,7 +14,6 @@ import java.util.Scanner;
 public class UserInput
 {
     private static Scanner scanner = new Scanner(System.in);
-
     public static String getHomeScreenOption()
     {
         System.out.println("What would you like to do?");

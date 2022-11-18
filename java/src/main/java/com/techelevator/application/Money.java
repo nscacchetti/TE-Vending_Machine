@@ -44,4 +44,24 @@ public class Money {
         }
 
     }
+
+    public void finishTransaction () {
+        int valueOfADollar = 100;
+        int valueOfAQuarter = 25;
+        int valueOfADime = 10;
+        int valueOfANickel = 5;
+
+        int changeAfterDollars = this.remainingBalance % valueOfADollar;
+        int dollarCount = (this.remainingBalance - changeAfterDollars)/valueOfADollar;
+        int changeAfterQuarters = this.remainingBalance % valueOfAQuarter;
+        int quarterCount = (this.remainingBalance - changeAfterQuarters)/valueOfAQuarter;
+        int changeAfterDimes = this.remainingBalance % valueOfADime;
+        int dimeCount = (this.remainingBalance - changeAfterDimes)/valueOfADime;
+        int changeAfterNickels = this.remainingBalance % valueOfANickel;
+        int nickelCount = (this.remainingBalance - changeAfterNickels)/valueOfANickel;
+
+        System.out.println("Change dispensed: " + dollarCount + " dollars, " + quarterCount + " quarters, " + dimeCount + " dimes, " + nickelCount + " nickels");
+        this.remainingBalance = 0;
+
+    }
 }

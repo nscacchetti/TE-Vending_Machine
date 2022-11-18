@@ -10,6 +10,22 @@ import static com.techelevator.ui.UserInput.getHomeScreenOption;
 
 public class VendingMachine 
 {
+    private String fileLocation;
+    private VendingContents contents;
+
+    public VendingMachine(String fileLocation) {
+        this.fileLocation = fileLocation;
+        try {
+            contents = new VendingContents(fileLocation);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+    public VendingContents getContents() {
+        return contents;
+    }
+
     public void run()
     {
         while(true)
@@ -19,6 +35,7 @@ public class VendingMachine
 
             if(choice.equals("display"))
             {
+
                 // display the vending machine slots
             }
             else if(choice.equals("purchase"))
@@ -79,8 +96,7 @@ public class VendingMachine
     }
 
     // (S) Select item
-    public static void DispenseItem(VendingMachineHistory history, VendingContents contents, Money money) {
-
+    public static void DispenseItem(VendingMachineHistory history, Money money, VendingContents contents) {
         Scanner scanner = new Scanner(System.in);
         vendingDisplay(history,contents);
         System.out.println("Enter slot id of selection:");
@@ -91,12 +107,12 @@ public class VendingMachine
         }
         catch (Exception e) {
             System.out.println("Slot doesn't exist");
-            DispenseItem(history, contents, money);
+            DispenseItem(history, money, contents);
         }
 
         if (quantityInSlot <= 0) {
             System.out.println("NO LONGER AVAILABLE.");
-            DispenseItem(history, contents, money);
+            DispenseItem(history, money, contents);
         }
 
         int priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
