@@ -1,25 +1,27 @@
 package com.techelevator.application;
 
+import java.math.BigDecimal;
+
 public class VendingItems {
 
     private String slotNo;
     private String nameOfProduct;
-    private int price;
+    private BigDecimal price;
     private int quantity = 6;
-    private int discountPrice;
+    private BigDecimal discountPrice;
 
-    public VendingItems(String slotNo, String nameOfProduct, int price) {
+    public VendingItems(String slotNo, String nameOfProduct, BigDecimal price) {
         this.slotNo = slotNo;
         this.nameOfProduct = nameOfProduct;
         this.price = price;
-        this.discountPrice = price - 1;
+        this.discountPrice = price.subtract(BigDecimal.valueOf(1));
     }
 
     public String getNameOfProduct() {
         return nameOfProduct;
     }
 
-    public int getPrice(boolean discountApplies) {
+    public BigDecimal getPrice(boolean discountApplies) {
         if (discountApplies) {
            return discountPrice;
         }
@@ -34,11 +36,11 @@ public class VendingItems {
         return quantity;
     }
 
-    public int getDiscountPrice() {
+    public BigDecimal getDiscountPrice() {
         return discountPrice;
     }
 
-    public String dispenseMessage(boolean isDiscount, int remainingBalance) {
+    public String dispenseMessage(boolean isDiscount, BigDecimal remainingBalance) {
         return null;
     }
 

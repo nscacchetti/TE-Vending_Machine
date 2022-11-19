@@ -1,32 +1,34 @@
 package com.techelevator.application;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
-
-import static com.techelevator.ui.UserInput.getHomeScreenOption;
 
 public class Money {
 
-    private int remainingBalance = 0;
+    private BigDecimal remainingBalance = BigDecimal.valueOf(0);
 
     public Money() {
-        this.remainingBalance = 0;
     }
 
-    public int getRemainingBalance() {
+    public BigDecimal getRemainingBalance() {
         return remainingBalance;
     }
 
-    public int spendMoney (int cost) {
-        if (this.remainingBalance - cost > 0) {
-            return this.remainingBalance -= cost;
+    public BigDecimal spendMoney (BigDecimal cost) {
+//        https://stackoverflow.com/questions/34677644/how-to-use-comparison-operators-like-on-bigdecimal
+        if (this.remainingBalance.subtract(cost).compareTo(BigDecimal.valueOf(0)) > 0) {
+            remainingBalance = this.remainingBalance.subtract(cost);
+            return remainingBalance;
         } else {
             System.out.println("Not enough money in balance");
             throw new Error("Low balance");
         }
     }
 
-    public int addMoney (int inputMoney) {
-        return this.remainingBalance += inputMoney;
+    public BigDecimal addMoney (BigDecimal inputMoney) {
+        
+        this.remainingBalance = remainingBalance.add(inputMoney);
+        return remainingBalance; 
     }
 
     public void feedMoney () {
@@ -35,7 +37,7 @@ public class Money {
             System.out.println("Insert money in whole dollar amounts");
             String dollarsEntered = inputScanner.nextLine();
             try {
-                int addedDollars = Integer.parseInt(dollarsEntered) * 100;
+                BigDecimal addedDollars = new BigDecimal(Integer.parseInt(dollarsEntered) * 100);
                 addMoney(addedDollars);
                 System.out.println("current balance: " + remainingBalance+ "cents");
             } catch(Exception e) {
@@ -52,18 +54,18 @@ public class Money {
         int valueOfAQuarter = 25;
         int valueOfADime = 10;
         int valueOfANickel = 5;
-
-        int changeAfterDollars = this.remainingBalance % valueOfADollar;
-        int dollarCount = (this.remainingBalance - changeAfterDollars)/valueOfADollar;
-        int changeAfterQuarters = this.remainingBalance % valueOfAQuarter;
-        int quarterCount = (this.remainingBalance - changeAfterQuarters)/valueOfAQuarter;
-        int changeAfterDimes = this.remainingBalance % valueOfADime;
-        int dimeCount = (this.remainingBalance - changeAfterDimes)/valueOfADime;
-        int changeAfterNickels = this.remainingBalance % valueOfANickel;
-        int nickelCount = (this.remainingBalance - changeAfterNickels)/valueOfANickel;
+        int remainingBalanceInt = this.remainingBalance.intValue();
+        int changeAfterDollars = remainingBalanceInt % valueOfADollar;
+        int dollarCount = (remainingBalanceInt - changeAfterDollars)/valueOfADollar;
+        int changeAfterQuarters = remainingBalanceInt % valueOfAQuarter;
+        int quarterCount = (remainingBalanceInt - changeAfterQuarters)/valueOfAQuarter;
+        int changeAfterDimes = remainingBalanceInt % valueOfADime;
+        int dimeCount = (remainingBalanceInt - changeAfterDimes)/valueOfADime;
+        int changeAfterNickels = remainingBalanceInt % valueOfANickel;
+        int nickelCount = (remainingBalanceInt - changeAfterNickels)/valueOfANickel;
 
         System.out.println("Change dispensed: " + dollarCount + " dollars, " + quarterCount + " quarters, " + dimeCount + " dimes, " + nickelCount + " nickels");
-        this.remainingBalance = 0;
+        this.remainingBalance = BigDecimal.valueOf(0);
 
     }
 }

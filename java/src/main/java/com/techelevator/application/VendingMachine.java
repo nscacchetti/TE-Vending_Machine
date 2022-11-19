@@ -2,6 +2,7 @@ package com.techelevator.application;
 
 import com.techelevator.ui.UserOutput;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Scanner;
 
@@ -57,7 +58,7 @@ public class VendingMachine {
             String slotNo = item.getSlotNo();
             String name = item.getNameOfProduct();
             if (slotNo != null) {
-                int price = item.getPrice(isDiscounted);
+                BigDecimal price = item.getPrice(isDiscounted);
                 int quantity = item.getQuantity();
 
                 String quantityString;
@@ -90,7 +91,7 @@ public class VendingMachine {
             DispenseItem(history, money, contents);
         }
 
-        int priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
+        BigDecimal priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
 
         try {
             money.spendMoney(priceInSlot);

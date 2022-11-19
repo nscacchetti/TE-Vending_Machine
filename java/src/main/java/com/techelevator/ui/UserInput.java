@@ -59,7 +59,7 @@ public class UserInput
         System.out.println("M) Feed Money");
         System.out.println("S) Select Item");
         System.out.println("F) Finish Transaction\n");
-        BigDecimal moneyBigDecimal = new BigDecimal(money.getRemainingBalance());
+        BigDecimal moneyBigDecimal = money.getRemainingBalance();
         moneyBigDecimal=moneyBigDecimal.divide(BigDecimal.valueOf(100));
 //https://www.infoworld.com/article/2075315/make-cents-with-bigdecimal.html
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);

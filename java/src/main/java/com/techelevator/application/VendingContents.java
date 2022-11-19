@@ -24,8 +24,8 @@ public class VendingContents {
             String slot = stringArray[0];
             String name = stringArray[1];
 
-            BigDecimal priceDecimal = new BigDecimal(stringArray[2]);
-            int price = priceDecimal.multiply(BigDecimal.valueOf(100)).intValue();
+            BigDecimal price = new BigDecimal(stringArray[2]);
+
             String foodType = stringArray[3];
             VendingItems vendingItem;
             if (foodType.equals("Candy")) {
