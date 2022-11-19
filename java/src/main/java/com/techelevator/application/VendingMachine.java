@@ -1,6 +1,5 @@
 package com.techelevator.application;
 
-import com.techelevator.ui.UserInput;
 import com.techelevator.ui.UserOutput;
 
 import java.util.List;
@@ -9,12 +8,12 @@ import java.util.Scanner;
 import static com.techelevator.ui.UserInput.getHomeScreenOption;
 import static com.techelevator.ui.UserInput.getPurchaseScreenOption;
 
-public class VendingMachine 
-{
+public class VendingMachine {
     private String fileLocation;
     private VendingContents contents;
     private VendingMachineHistory history;
-    private Money money;
+    private Money money = new Money();
+
 
     public VendingMachine(String fileLocation) {
         this.fileLocation = fileLocation;
@@ -25,61 +24,6 @@ public class VendingMachine
         }
         history = new VendingMachineHistory();
     }
-
-    public VendingContents getContents() {
-        return contents;
-    }
-
-    public void run()
-    {
-        while(true)
-        {
-            UserOutput.displayHomeScreen();
-            String choice = getHomeScreenOption();
-
-            if(choice.equals("display"))
-            {
-                vendingDisplay(history,contents);
-
-                // display the vending machine slots
-            }
-            else if(choice.equals("purchase"))
-            {
-
-            }
-            else if(choice.equals("exit"))
-            {
-                // good bye
-                break;
-            }
-        }
-    }
-
-
-    public void purchase() {
-        {
-
-            String choice = getPurchaseScreenOption(money);
-
-            if(choice.equals("M"))
-            {
-                money.feedMoney();
-
-                // display the vending machine slots
-            }
-            else if(choice.equals("S"))
-            {
-                DispenseItem(history,money, contents);
-            }
-            else if(choice.equals("F"))
-            {
-                money.finishTransaction();
-
-            }
-        }
-    }
-
-
 
     public static int VendingConverting(String slot) {
         int a = 10;
@@ -107,7 +51,7 @@ public class VendingMachine
     public static void vendingDisplay(VendingMachineHistory history, VendingContents contents) {
         List contentsList = contents.getVendingList();
         boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
-        for (int i = 0; i <contentsList.size() ; i++) {
+        for (int i = 0; i < contentsList.size(); i++) {
 
             VendingItems item = contents.getVendingItemFromList(i);
             String slotNo = item.getSlotNo();
@@ -130,14 +74,13 @@ public class VendingMachine
     // (S) Select item
     public static void DispenseItem(VendingMachineHistory history, Money money, VendingContents contents) {
         Scanner scanner = new Scanner(System.in);
-        vendingDisplay(history,contents);
+        vendingDisplay(history, contents);
         System.out.println("Enter slot id of selection:");
         String slotSelected = scanner.nextLine();
         int quantityInSlot = 0;
         try {
             quantityInSlot = contents.getVendingItem(slotSelected).getQuantity();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Slot doesn't exist");
             DispenseItem(history, money, contents);
         }
@@ -158,5 +101,45 @@ public class VendingMachine
         selectedItem.dispenseItem();
         selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
         history.addCounter();
+    }
+
+    public VendingContents getContents() {
+        return contents;
+    }
+
+    public void run() {
+        while (true) {
+            UserOutput.displayHomeScreen();
+            String choice = getHomeScreenOption();
+
+            if (choice.equals("display")) {
+                vendingDisplay(history, contents);
+
+                // display the vending machine slots
+            } else if (choice.equals("purchase")) {
+                purchase();
+            } else if (choice.equals("exit")) {
+                // good bye
+                break;
+            }
+        }
+    }
+
+    public void purchase() {
+        {
+
+            String choice = getPurchaseScreenOption(money);
+
+            if (choice.equals("M")) {
+                money.feedMoney();
+
+                // display the vending machine slots
+            } else if (choice.equals("S")) {
+                DispenseItem(history, money, contents);
+            } else if (choice.equals("F")) {
+                money.finishTransaction();
+
+            }
+        }
     }
 }

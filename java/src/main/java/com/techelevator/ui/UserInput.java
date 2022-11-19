@@ -60,7 +60,7 @@ public class UserInput
         System.out.println("S) Select Item");
         System.out.println("F) Finish Transaction\n");
         BigDecimal moneyBigDecimal = new BigDecimal(money.getRemainingBalance());
-        moneyBigDecimal.divide(BigDecimal.valueOf(100));
+        moneyBigDecimal=moneyBigDecimal.divide(BigDecimal.valueOf(100));
 //https://www.infoworld.com/article/2075315/make-cents-with-bigdecimal.html
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
 
@@ -72,7 +72,7 @@ public class UserInput
         System.out.print("Please select an option: ");
 
         String selectedOption = scanner.nextLine();
-        String option = selectedOption.trim().toLowerCase();
+        String option = selectedOption.trim().toUpperCase();
 
         if (option.equals("M"))
         {

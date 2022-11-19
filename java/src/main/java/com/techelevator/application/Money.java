@@ -8,8 +8,8 @@ public class Money {
 
     private int remainingBalance = 0;
 
-    public Money(int remainingBalance) {
-        this.remainingBalance = remainingBalance;
+    public Money() {
+        this.remainingBalance = 0;
     }
 
     public int getRemainingBalance() {
@@ -37,8 +37,10 @@ public class Money {
             try {
                 int addedDollars = Integer.parseInt(dollarsEntered) * 100;
                 addMoney(addedDollars);
+                System.out.println("current balance: " + remainingBalance+ "cents");
             } catch(Exception e) {
-                getHomeScreenOption();
+
+            break;
             }
 
         }
