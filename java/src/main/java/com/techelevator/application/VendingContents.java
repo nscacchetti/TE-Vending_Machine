@@ -2,6 +2,7 @@ package com.techelevator.application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.util.*;
 
 import static com.techelevator.application.VendingMachine.VendingConverting;
@@ -15,25 +16,32 @@ public class VendingContents {
 //*********************
 //    find different list
     public VendingContents(String fileLocation) throws Throwable {
+        Map<String, VendingItems> contentsMap = this.contentsMap;
         File dataFile = new File(fileLocation);
         Scanner scanner = new Scanner(dataFile);
         while (scanner.hasNextLine()) {
             String [] stringArray = scanner.nextLine().split(",");
             String slot = stringArray[0];
             String name = stringArray[1];
-            int price = Integer.parseInt(stringArray[2]) * 100;
+
+            BigDecimal priceDecimal = new BigDecimal(stringArray[2]);
+            int price = priceDecimal.multiply(BigDecimal.valueOf(100)).intValue();
             String foodType = stringArray[3];
+            VendingItems vendingItem;
             if (foodType.equals("Candy")) {
-                Candy vendingItem = new Candy(slot, name, price);
+                vendingItem = new Candy(slot, name, price);
             } else if (foodType.equals("Drink")) {
-                Drink vendingItem = new Drink(slot, name, price);
+                vendingItem = new Drink(slot, name, price);
             } else if (foodType.equals("Gum")) {
-                Gum vendingItem = new Gum(slot, name, price);
+                vendingItem = new Gum(slot, name, price);
             } else if (foodType.equals("Munchy")) {
-                Munchy vendingItem = new Munchy(slot, name, price);
+                vendingItem = new Munchy(slot, name, price);
             } else {
                 throw new Throwable("no type");
             }
+            contentsMap.put(slot, vendingItem);
+
+
         }
     }
 

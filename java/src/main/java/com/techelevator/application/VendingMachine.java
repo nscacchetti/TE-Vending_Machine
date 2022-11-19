@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import static com.techelevator.ui.UserInput.getHomeScreenOption;
+import static com.techelevator.ui.UserInput.getPurchaseScreenOption;
 
 public class VendingMachine 
 {
     private String fileLocation;
     private VendingContents contents;
+    private VendingMachineHistory history;
+    private Money money;
 
     public VendingMachine(String fileLocation) {
         this.fileLocation = fileLocation;
@@ -20,6 +23,7 @@ public class VendingMachine
         } catch (Throwable e) {
             e.printStackTrace();
         }
+        history = new VendingMachineHistory();
     }
 
     public VendingContents getContents() {
@@ -35,12 +39,13 @@ public class VendingMachine
 
             if(choice.equals("display"))
             {
+                vendingDisplay(history,contents);
 
                 // display the vending machine slots
             }
             else if(choice.equals("purchase"))
             {
-                // make a purchase
+
             }
             else if(choice.equals("exit"))
             {
@@ -49,6 +54,33 @@ public class VendingMachine
             }
         }
     }
+
+
+    public void purchase() {
+        {
+
+            String choice = getPurchaseScreenOption(money);
+
+            if(choice.equals("M"))
+            {
+                money.feedMoney();
+
+                // display the vending machine slots
+            }
+            else if(choice.equals("S"))
+            {
+                DispenseItem(history,money, contents);
+            }
+            else if(choice.equals("F"))
+            {
+                money.finishTransaction();
+
+            }
+        }
+    }
+
+
+
     public static int VendingConverting(String slot) {
         int a = 10;
         int b = 20;
