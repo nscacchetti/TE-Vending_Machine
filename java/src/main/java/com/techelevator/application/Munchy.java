@@ -10,7 +10,7 @@ public class Munchy extends VendingItems {
 
     @Override
     public String dispenseMessage(boolean isDiscount, BigDecimal remainingBalance) {
-        System.out.println(getNameOfProduct() + " " + getPrice(isDiscount) + " " + remainingBalance);
+
         System.out.println("Munchy, Munchy, so Good!");
         return "Munchy, Munchy, so Good!";
     }

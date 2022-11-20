@@ -124,3 +124,23 @@
 2022-11-20 15:23 : Added Dollars: 1
 2022-11-20 15:24 : spent: 1.65Balance: 2.35
 2022-11-20 15:24 : dispensed 1 Teaberry for $1.65 remaining balance: $2.35
+2022-11-20 15:26 : vending machine start
+2022-11-20 15:26 : Current Balance: $1.00
+2022-11-20 15:26 : Added Dollars: 1
+2022-11-20 15:26 : Current Balance: $2.00
+2022-11-20 15:26 : Added Dollars: 1
+2022-11-20 15:26 : Current Balance: $3.00
+2022-11-20 15:26 : Added Dollars: 1
+2022-11-20 15:26 : spent: $2.25 Balance: $0.75
+2022-11-20 15:26 : dispensed 1 Caramel Bar for $2.25 remaining balance: $0.75
+2022-11-20 15:29 : vending machine start
+2022-11-20 15:29 : Current Balance: $1.00
+2022-11-20 15:29 : Added Dollars: 1
+2022-11-20 15:29 : Current Balance: $2.00
+2022-11-20 15:29 : Added Dollars: 1
+2022-11-20 15:29 : Current Balance: $3.00
+2022-11-20 15:29 : Added Dollars: 1
+2022-11-20 15:29 : Current Balance: $4.00
+2022-11-20 15:29 : Added Dollars: 1
+2022-11-20 15:29 : spent: $1.65 Balance: $2.35
+2022-11-20 15:29 : dispensed 1 Teaberry for $1.65 remaining balance: $2.35

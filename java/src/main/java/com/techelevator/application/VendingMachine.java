@@ -113,6 +113,7 @@ public class VendingMachine {
         String moneyString = n.format(money.getRemainingBalance().divide(BigDecimal.valueOf(100)));
         this.logger.write("dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + " for $"+ priceInSlot + " remaining balance: "+ moneyString);
         selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
+        System.out.println("Remaining Balance: "+moneyString);
         history.addCounter();
     }
 

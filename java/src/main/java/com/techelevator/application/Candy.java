@@ -10,7 +10,7 @@ public class Candy extends VendingItems {
 
     @Override
     public String dispenseMessage(boolean isDiscount, BigDecimal remainingBalance) {
-        System.out.println(getNameOfProduct() + " " + getPrice(isDiscount) + " " + remainingBalance);
+
         System.out.println("Sugar, Sugar, so Sweet!");
         return "Sugar, Sugar, so Sweet!";
     }

@@ -10,7 +10,7 @@ public class Drink extends VendingItems {
 
     @Override
     public String dispenseMessage(boolean isDiscount, BigDecimal remainingBalance) {
-        System.out.println(getNameOfProduct() + " " + getPrice(isDiscount) + " " + remainingBalance);
+
         System.out.println("Drinky, Drinky, Slurp Slurp!");
         return "Drinky, Drinky, Slurp Slurp!";
     }

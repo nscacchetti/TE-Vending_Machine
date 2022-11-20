@@ -10,7 +10,7 @@ public class Gum extends VendingItems {
 
     @Override
     public String dispenseMessage(boolean isDiscount, BigDecimal remainingBalance) {
-        System.out.println(getNameOfProduct() + " " + getPrice(isDiscount) + " " + remainingBalance);
+
         System.out.println("Chewy, Chewy, Lots O Bubbles!");
         return "Chewy, Chewy, Lots O Bubbles!";
     }
