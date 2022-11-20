@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Logger {
 // adapted from andy
@@ -16,7 +17,12 @@ public class Logger {
     }
 
     public void write(String message) {
-        LocalDateTime timeStamp = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now();
+// https://howtodoinjava.com/java/date-time/java8-datetimeformatter-example/
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        String timeStamp = formatter.format(now);
+
         String lineOfLog = timeStamp + " : " + message + "\n";
 
         PrintWriter writer = null;

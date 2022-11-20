@@ -3,7 +3,9 @@ package com.techelevator.application;
 import com.techelevator.ui.UserOutput;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 import static com.techelevator.ui.UserInput.getHomeScreenOption;
@@ -25,7 +27,7 @@ public class VendingMachine {
             e.printStackTrace();
         }
         history = new VendingMachineHistory();
-        logger.write(vendingDisplay(history,contents));
+        logger.write("vending machine start");
     }
 
     public static int VendingConverting(String slot) {
@@ -82,28 +84,34 @@ public class VendingMachine {
         System.out.println("Enter slot id of selection:");
         String slotSelected = scanner.nextLine();
         int quantityInSlot = 0;
+        BigDecimal priceInSlot = null;
         try {
             quantityInSlot = contents.getVendingItem(slotSelected).getQuantity();
+            priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
         } catch (Exception e) {
             System.out.println("Slot doesn't exist");
             DispenseItem(history, money, contents);
+            return;
         }
 
         if (quantityInSlot <= 0) {
             System.out.println("NO LONGER AVAILABLE.");
             DispenseItem(history, money, contents);
+            return;
         }
 
-        BigDecimal priceInSlot = contents.getVendingItem(slotSelected).getPrice(history.checkDiscount());
+
 
         try {
             money.spendMoney(priceInSlot);
         } catch (Exception e) {
-            getHomeScreenOption();
+            return;
         }
         VendingItems selectedItem = contents.getVendingItem(slotSelected);
         selectedItem.dispenseItem();
-        this.logger.write("dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + "for "+ priceInSlot + " remaining balance: "+ money.getRemainingBalance());
+        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
+        String moneyString = n.format(money.getRemainingBalance().divide(BigDecimal.valueOf(100)));
+        this.logger.write("dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + " for $"+ priceInSlot + " remaining balance: "+ moneyString);
         selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
         history.addCounter();
     }

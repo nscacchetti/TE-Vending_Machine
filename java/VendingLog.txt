@@ -7,3 +7,120 @@
 2022-11-20T14:36:21.604846200 : dispensed 1 Teaberryfor 1.65 remaining balance: 935.00
 2022-11-20T14:39:38.296170800 : Change dispensed: 9 dollars, -1 quarters, 1 dimes, 0 nickels
 2022-11-20T14:39:38.296170800 : Current Balance: 0
+2022-11-20T14:40:42.511393800 : null
+2022-11-20T14:41:03.804098400 : 2000
+2022-11-20T14:41:03.805104 : current balance: 2000cents
+2022-11-20T14:41:19.452227600 : spent: 2.25Balance: 17.75
+2022-11-20T14:41:19.453276100 : dispensed 1 Caramel Barfor 2.25 remaining balance: 1775.00
+2022-11-20T14:41:27.458578 : spent: 1.25Balance: 16.50
+2022-11-20T14:41:27.459578500 : dispensed 1 Caramel Barfor 1.25 remaining balance: 1650.00
+2022-11-20T14:43:35.726859400 : null
+2022-11-20T14:43:44.891475400 : 10000
+2022-11-20T14:43:44.892442500 : current balance: 10000cents
+2022-11-20T14:44:04.472502400 : spent: 1.65Balance: 98.35
+2022-11-20T14:44:04.472502400 : dispensed 1 Teaberryfor 1.65 remaining balance: 9835.00
+2022-11-20T14:44:13.935718800 : spent: 0.65Balance: 97.70
+2022-11-20T14:44:13.936718500 : dispensed 1 Teaberryfor 0.65 remaining balance: 9770.00
+2022-11-20T14:48:33.874625800 : null
+2022-11-20T14:48:42.856105800 : Not enough money in balance
+2022-11-20T14:50:03.230438800 : null
+2022-11-20T14:50:11.485455500 : Not enough money in balance
+2022-11-20T14:50:11.486454800 : dispensed 1 Teaberryfor 1.65 remaining balance: 0
+2022-11-20T14:50:26.171829700 : Not enough money in balance
+2022-11-20T14:50:26.172878300 : dispensed 1 Teaberryfor 0.65 remaining balance: 0
+2022-11-20T14:53:36.225189200 : null
+2022-11-20T14:53:44.500152100 : Not enough money in balance
+2022-11-20T14:53:57.544027500 : Not enough money in balance
+2022-11-20T14:54:47.270087500 : 2000
+2022-11-20T14:54:47.270087500 : current balance: 2000cents
+2022-11-20T14:54:59.795889700 : spent: 1.65Balance: 18.35
+2022-11-20T14:54:59.795889700 : dispensed 1 Teaberryfor 1.65 remaining balance: 1835.00
+2022-11-20T14:55:07.186976500 : spent: 0.65Balance: 17.70
+2022-11-20T14:55:07.187542500 : dispensed 1 Teaberryfor 0.65 remaining balance: 1770.00
+2022-11-20T14:55:22.144110100 : spent: 1.65Balance: 16.05
+2022-11-20T14:55:22.144667200 : dispensed 1 Teaberryfor 1.65 remaining balance: 1605.00
+2022-11-20T14:55:40.636691600 : Change dispensed: 16 dollars, 0 quarters, 0 dimes, -1 nickels
+2022-11-20T14:55:40.636691600 : Current Balance: 0
+2022-11-20T14:57:46.082013600 : null
+2022-11-20T14:57:48.030221900 : null
+2022-11-20T14:58:28.671723 : 1500
+2022-11-20T14:58:28.672730200 : current balance: 1500cents
+2022-11-20T14:58:48.774227700 : spent: 1.65Balance: 13.35
+2022-11-20T14:58:48.774227700 : dispensed 1 Teaberryfor 1.65 remaining balance: 1335.00
+2022-11-20T14:59:37.314960400 : Change dispensed: 13 dollars, -1 quarters, 1 dimes, 0 nickels
+2022-11-20T14:59:37.315956900 : Current Balance: 0
+2022-11-20T14:59:39.556275 : null
+2022-11-20T14:59:47.750810900 : 1500
+2022-11-20T14:59:47.751321100 : current balance: 1500cents
+2022-11-20T14:59:53.988699300 : spent: 1.65Balance: 13.35
+2022-11-20T14:59:53.989642100 : dispensed 1 Teaberryfor 1.65 remaining balance: 1335.00
+2022-11-20T15:00:43.772650 : Change dispensed: 13 dollars, -1 quarters, 1 dimes, 0 nickels
+2022-11-20T15:00:43.772650 : Current Balance: 0
+2022-11-20T15:00:46.324247800 : null
+2022-11-20T15:00:51.556308900 : 1500
+2022-11-20T15:00:51.557310 : current balance: 1500cents
+2022-11-20T15:00:57.631714900 : spent: 1.65Balance: 13.35
+2022-11-20T15:00:57.631714900 : dispensed 1 Teaberryfor 1.65 remaining balance: 1335.00
+2022-11-20T15:06:14.460204 : Change dispensed: 13 dollars, 1 quarters, 1 dimes, 0 nickels
+2022-11-20T15:06:14.467233900 : Current Balance: 0
+2022-11-20 15:09 : null
+2022-11-20 15:11 : vending machine start
+2022-11-20 15:13 : 100
+2022-11-20 15:13 : current balance: 100cents
+2022-11-20 15:13 : 100
+2022-11-20 15:13 : current balance: 200cents
+2022-11-20 15:15 : vending machine start
+2022-11-20 15:15 : 100
+2022-11-20 15:15 : current balance: 100cents
+2022-11-20 15:17 : vending machine start
+2022-11-20 15:17 : Current Balance: $100.00
+2022-11-20 15:17 : Added Dollars: 100
+2022-11-20 15:17 : vending machine start
+2022-11-20 15:17 : Current Balance: $100.00
+2022-11-20 15:17 : Added Dollars: 100
+2022-11-20 15:18 : vending machine start
+2022-11-20 15:18 : Current Balance: $1.00
+2022-11-20 15:18 : Added Dollars: 100
+2022-11-20 15:18 : Current Balance: $2.00
+2022-11-20 15:18 : Added Dollars: 100
+2022-11-20 15:18 : Current Balance: $3.00
+2022-11-20 15:18 : Added Dollars: 100
+2022-11-20 15:19 : spent: 1.65Balance: 1.35
+2022-11-20 15:19 : dispensed 1 Teaberryfor 1.65 remaining balance: 135.00
+2022-11-20 15:19 : Change dispensed: 1 dollars, 1 quarters, 1 dimes, 0 nickels
+2022-11-20 15:19 : Current Balance: $0.00
+2022-11-20 15:21 : vending machine start
+2022-11-20 15:21 : Current Balance: $1.00
+2022-11-20 15:21 : Added Dollars: 100
+2022-11-20 15:21 : Current Balance: $2.00
+2022-11-20 15:21 : Added Dollars: 100
+2022-11-20 15:21 : Current Balance: $3.00
+2022-11-20 15:21 : Added Dollars: 100
+2022-11-20 15:21 : Current Balance: $4.00
+2022-11-20 15:21 : Added Dollars: 100
+2022-11-20 15:21 : Current Balance: $5.00
+2022-11-20 15:21 : Added Dollars: 100
+2022-11-20 15:22 : spent: 1.65Balance: 3.35
+2022-11-20 15:22 : dispensed 1 Teaberryfor 1.65 remaining balance: $3.35
+2022-11-20 15:22 : Change dispensed: 3 dollars, 1 quarters, 1 dimes, 0 nickels
+2022-11-20 15:22 : Current Balance: $0.00
+2022-11-20 15:22 : vending machine start
+2022-11-20 15:23 : Current Balance: $1.00
+2022-11-20 15:23 : Added Dollars: 100
+2022-11-20 15:23 : Current Balance: $2.00
+2022-11-20 15:23 : Added Dollars: 100
+2022-11-20 15:23 : Current Balance: $3.00
+2022-11-20 15:23 : Added Dollars: 100
+2022-11-20 15:23 : Current Balance: $4.00
+2022-11-20 15:23 : Added Dollars: 100
+2022-11-20 15:23 : vending machine start
+2022-11-20 15:23 : Current Balance: $1.00
+2022-11-20 15:23 : Added Dollars: 1
+2022-11-20 15:23 : Current Balance: $2.00
+2022-11-20 15:23 : Added Dollars: 1
+2022-11-20 15:23 : Current Balance: $3.00
+2022-11-20 15:23 : Added Dollars: 1
+2022-11-20 15:23 : Current Balance: $4.00
+2022-11-20 15:23 : Added Dollars: 1
+2022-11-20 15:24 : spent: 1.65Balance: 2.35
+2022-11-20 15:24 : dispensed 1 Teaberry for $1.65 remaining balance: $2.35
