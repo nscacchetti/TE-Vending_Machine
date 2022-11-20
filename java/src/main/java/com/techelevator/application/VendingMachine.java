@@ -13,7 +13,8 @@ public class VendingMachine {
     private String fileLocation;
     private VendingContents contents;
     private VendingMachineHistory history;
-    private Money money = new Money();
+    private Logger logger = new Logger("VendingLog.txt");
+    private Money money = new Money(logger);
 
 
     public VendingMachine(String fileLocation) {
@@ -24,6 +25,7 @@ public class VendingMachine {
             e.printStackTrace();
         }
         history = new VendingMachineHistory();
+        logger.write(vendingDisplay(history,contents));
     }
 
     public static int VendingConverting(String slot) {
@@ -49,7 +51,7 @@ public class VendingMachine {
         return index;
     }
 
-    public static void vendingDisplay(VendingMachineHistory history, VendingContents contents) {
+    public static String vendingDisplay(VendingMachineHistory history, VendingContents contents) {
         List contentsList = contents.getVendingList();
         boolean isDiscounted = history.getCountOfItemsDispensed() % 2 == 1;
         for (int i = 0; i < contentsList.size(); i++) {
@@ -70,10 +72,11 @@ public class VendingMachine {
                 System.out.println(slotNo + " " + name + " " + price + " " + quantityString);
             }
         }
+        return null;
     }
 
     // (S) Select item
-    public static void DispenseItem(VendingMachineHistory history, Money money, VendingContents contents) {
+    public void DispenseItem(VendingMachineHistory history, Money money, VendingContents contents) {
         Scanner scanner = new Scanner(System.in);
         vendingDisplay(history, contents);
         System.out.println("Enter slot id of selection:");
@@ -100,6 +103,7 @@ public class VendingMachine {
         }
         VendingItems selectedItem = contents.getVendingItem(slotSelected);
         selectedItem.dispenseItem();
+        this.logger.write("dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + "for "+ priceInSlot + " remaining balance: "+ money.getRemainingBalance());
         selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
         history.addCounter();
     }
@@ -142,5 +146,7 @@ public class VendingMachine {
 
             }
         }
+
     }
+
 }

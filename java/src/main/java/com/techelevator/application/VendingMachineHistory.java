@@ -4,6 +4,7 @@ public class VendingMachineHistory {
 
     private int countOfItemsDispensed;
 
+
     public int getCountOfItemsDispensed() {
         return countOfItemsDispensed;
     }
@@ -19,4 +20,7 @@ public class VendingMachineHistory {
     public boolean checkDiscount () {
        return countOfItemsDispensed % 2 == 1;
     }
+
+
+
 }
