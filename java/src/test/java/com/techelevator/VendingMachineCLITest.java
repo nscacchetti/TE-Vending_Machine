@@ -10,26 +10,6 @@ public class VendingMachineCLITest {
      * is the price what I expected etc.
      * change functionallity
      * */
-    @Test
-    public void test_VendingMachineCLI() {
-        new VendingMachineCLI();
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

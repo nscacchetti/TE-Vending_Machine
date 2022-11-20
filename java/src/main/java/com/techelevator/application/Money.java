@@ -16,8 +16,8 @@ public class Money {
 
     public BigDecimal spendMoney (BigDecimal cost) {
 //        https://stackoverflow.com/questions/34677644/how-to-use-comparison-operators-like-on-bigdecimal
-        if (this.remainingBalance.subtract(cost).compareTo(BigDecimal.valueOf(0)) > 0) {
-            remainingBalance = this.remainingBalance.subtract(cost);
+        if (this.remainingBalance.subtract(cost.multiply(BigDecimal.valueOf(100))).compareTo(BigDecimal.valueOf(0)) > 0) {
+            remainingBalance = this.remainingBalance.subtract(cost.multiply(BigDecimal.valueOf(100)));
             return remainingBalance;
         } else {
             System.out.println("Not enough money in balance");
@@ -57,6 +57,7 @@ public class Money {
         int remainingBalanceInt = this.remainingBalance.intValue();
         int changeAfterDollars = remainingBalanceInt % valueOfADollar;
         int dollarCount = (remainingBalanceInt - changeAfterDollars)/valueOfADollar;
+
         int changeAfterQuarters = remainingBalanceInt % valueOfAQuarter;
         int quarterCount = (remainingBalanceInt - changeAfterQuarters)/valueOfAQuarter;
         int changeAfterDimes = remainingBalanceInt % valueOfADime;
