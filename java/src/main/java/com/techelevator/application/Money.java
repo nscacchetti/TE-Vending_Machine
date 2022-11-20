@@ -22,7 +22,7 @@ public class Money {
 //        https://stackoverflow.com/questions/34677644/how-to-use-comparison-operators-like-on-bigdecimal
         if (this.remainingBalance.subtract(cost.multiply(BigDecimal.valueOf(100))).compareTo(BigDecimal.valueOf(0)) > 0) {
             remainingBalance = this.remainingBalance.subtract(cost.multiply(BigDecimal.valueOf(100)));
-            logger.write("spent: $" + cost + " Balance: $" + remainingBalance.divide(BigDecimal.valueOf(100)));
+            logger.write("Spent: $" + cost + " Balance: $" + remainingBalance.divide(BigDecimal.valueOf(100)));
             return remainingBalance;
         } else {
             System.out.println("Not enough money in balance");
@@ -50,7 +50,7 @@ public class Money {
                 String moneyString = n.format(remainingBalance.divide(BigDecimal.valueOf(100)));
                 logger.write("Current Balance: " + moneyString);
                 logger.write("Added Dollars: " + addedDollars.divide(BigDecimal.valueOf(100)));
-                System.out.println("current balance: " + moneyString);
+                System.out.println("Current balance: " + moneyString);
             } catch (Exception e) {
 
                 break;

@@ -27,7 +27,7 @@ public class VendingMachine {
             e.printStackTrace();
         }
         history = new VendingMachineHistory();
-        logger.write("vending machine start");
+        logger.write("Vending machine start");
     }
 
     public static int VendingConverting(String slot) {
@@ -111,7 +111,7 @@ public class VendingMachine {
         selectedItem.dispenseItem();
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.US);
         String moneyString = n.format(money.getRemainingBalance().divide(BigDecimal.valueOf(100)));
-        this.logger.write("dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + " for $"+ priceInSlot + " remaining balance: "+ moneyString);
+        this.logger.write("Dispensed 1 "+ contents.getVendingItem(slotSelected).getNameOfProduct() + " for $"+ priceInSlot + " remaining balance: "+ moneyString);
         selectedItem.dispenseMessage(history.checkDiscount(), money.getRemainingBalance());
         System.out.println("Remaining Balance: "+moneyString);
         history.addCounter();
