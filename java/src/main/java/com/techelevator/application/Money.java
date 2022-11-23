@@ -51,8 +51,8 @@ public class Money {
                 logger.write("Current Balance: " + moneyString);
                 logger.write("Added Dollars: " + addedDollars.divide(BigDecimal.valueOf(100)));
                 System.out.println("Current balance: " + moneyString);
-            } catch (Exception e) {
-
+            } catch (NumberFormatException e) {
+//ask for a whole number
                 break;
             }
 
@@ -77,7 +77,7 @@ public class Money {
         remainingBalanceInt = changeAfterDimes;
         int changeAfterNickels = remainingBalanceInt % valueOfANickel;
         int nickelCount = (remainingBalanceInt - changeAfterNickels) / valueOfANickel;
-
+// perfect opportunity for a unit test, with return
         System.out.println("Change dispensed: " + dollarCount + " dollars, " + quarterCount + " quarters, " + dimeCount + " dimes, " + nickelCount + " nickels");
         logger.write("Change dispensed: " + dollarCount + " dollars, " + quarterCount + " quarters, " + dimeCount + " dimes, " + nickelCount + " nickels");
         this.remainingBalance = BigDecimal.valueOf(0);

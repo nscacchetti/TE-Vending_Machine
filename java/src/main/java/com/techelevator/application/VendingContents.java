@@ -38,6 +38,8 @@ public class VendingContents {
                 vendingItem = new Munchy(slot, name, price);
             } else {
                 throw new Throwable("no type");
+//                throw new Exception, but would make own exception, make new class and extend the exception from the class, would output whatever we want to call it
+//                file not found exception
             }
             contentsMap.put(slot, vendingItem);
 
